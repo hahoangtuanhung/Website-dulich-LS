@@ -9,6 +9,9 @@ header {
   padding: 5px;
   text-align: left;
 }
+footer {
+  background-image: ;
+}
 
 nav {
   background-color: #046173;
@@ -39,4 +42,11 @@ footer {
   background-color: #333;
   color: white;
   padding: 10px 0;
+}
+
+h1 {
+  color: rgb(239, 118, 138);
+}
+h4 {
+  color: rgb(239, 118, 138);
 }

@@ -5,14 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Lạng Sơn Tourism</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      .slideshow {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .slide {
+        display: none;
+      }
+      .slide img {
+        width: 100%; /* Độ rộng ảnh sẽ sở hữu độ rộng của phần tử cha */
+        height: auto; /* Đảm bảo tỉ lệ của ảnh không bị biến dạng */
+      }
+      .slideshow-container {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 1000px;
+      }
+      .container_swap {
+        width: 800px;
+      }
+
+      .div_left {
+        width: 300px;
+
+        float: left;
+
+        text-align: center;
+      }
+
+      .div_right {
+        width: 500px;
+
+        float: left;
+
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div
-        style="display: flex;">
-        <img src="./image/logo.jpg" alt="logo" width="150" />
+      <div style="display: flex">
+        <a href="/"
+          ><img src="./image/logo-tachnen.png" alt="logo" width="150px"
+        /></a>
         <h1 style="text-align: center; font-size: 50px">
-          Giới thiệu du lịch Tỉnh Lạng Sơn
+          Du lịch Tỉnh Lạng Sơn
         </h1>
       </div>
     </header>
@@ -24,12 +64,65 @@
         <li><a href="./amthuc.html">Ẩm thực vùng miền </a></li>
       </ul>
     </nav>
-<div>
-    <h2>abc</h2>
-</div>
+    <!-- Phần chạy slide -->
+    <div class="slideshow">
+      <div class="slide">
+        <img src="/image/slide1.jpg" alt="Thung lũng Bắc Sơn" />
+      </div>
+      <div class="slide">
+        <img src="/image/slide2.jpg" alt="Cột cờ phai vệ" />
+      </div>
+      <div class="slide">
+        <img src="/image/slide3.jpg" alt="Núi Mẫu Sơn" />
+      </div>
+    </div>
 
-    <footer>
-      <p>&copy; 2024 Lạng Sơn Tourism</p>
-    </footer>
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide() {
+        slides.forEach((slide) => (slide.style.display = "none"));
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.display = "block";
+        setTimeout(showSlide, 3000); // Chuyển ảnh sau mỗi 5 giây
+      }
+
+      showSlide(); // Bắt đầu chạy slideshow
+    </script>
+    <!-- 2 ô tin tức song song-->
+    <!-- Ô TIN TỨC -->
+    <div class="container_swap">
+      <div class="div_left">
+        <h4>Tin tức nổi bật</h4>
+        <a
+          href="https://langsontourism.com.vn/vi/detailnews/?t=trien-khai-chuong-trinh-hop-tac-chuyen-doi-so-du-lich-lang-son&id=news_1868"
+          target="_blank"
+        >
+          <img src="/image/IMG-tintuc/1.jpg" style="width: 150%" />
+        </a>
+        <a
+          href="https://langsontourism.com.vn/vi/detailnews/?t=cong-vien-dia-chat-lang-son-dong-chay-su-song-noi-mien-dat-thieng&id=news_1854"
+          target="_blank"
+          ><img src="/image/IMG-tintuc/2.jpg" style="width: 150%"
+        /></a>
+        <a
+          href="https://langsontourism.com.vn/vi/detailnews/?t=hoi-nghi-xay-dung-san-pham-du-lich-nong-thon-tren-dia-ban-huyen-dinh-lap&id=news_1845"
+          target="_blank"
+          ><img src="/image/IMG-tintuc/3.jpg" style="width: 150%"
+        /></a>
+      </div>
+      <!-- Ô Khám phá -->
+      <div class="div_right"></div>
+      <h4>Khám Phá</h4>
+      <a href="Gioithieu.html">
+        <img src="/image/img-khampha/1.jpg" alt=""
+      /></a>
+      <a href="diemden.html"><img src="/image/img-khampha/2.jpg" alt="" /></a>
+      <a href="amthuc.html"><img src="/image/img-khampha/3.jpg" alt="" /></a>
+    </div>
   </body>
+  <footer>
+    <p>&copy; 2024 Lạng Sơn Tourism</p>
+  </footer>
 </html>
