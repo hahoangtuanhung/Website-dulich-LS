@@ -24,25 +24,16 @@
         text-align: center;
         max-width: 1000px;
       }
-      .container_swap {
-        width: 800px;
-      }
+      .container {
+            display: flex; /* Sử dụng flexbox để căn chỉnh */
+        }
 
-      .div_left {
-        width: 300px;
-
-        float: left;
-
-        text-align: center;
-      }
-
-      .div_right {
-        width: 500px;
-
-        float: left;
-
-        text-align: center;
-      }
+        .box {
+            width: 50%; /* Độ rộng của mỗi ô div */
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Đảm bảo kích thước tính cả padding và border */
+        }
     </style>
   </head>
   <body>
@@ -63,6 +54,10 @@
         <li><a href="./diemden.html">Điểm đến thú vị</a></li>
         <li><a href="./amthuc.html">Ẩm thực vùng miền </a></li>
       </ul>
+      <form action="/search" method="get">
+        <input type="text" placeholder="Tìm Kiêm" class="search-box" name="search">
+        <button type="submit" class="search-btn">Tìm</button>
+    </form>
     </nav>
     <!-- Phần chạy slide -->
     <div class="slideshow">
@@ -85,44 +80,42 @@
         slides.forEach((slide) => (slide.style.display = "none"));
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].style.display = "block";
-        setTimeout(showSlide, 3000); // Chuyển ảnh sau mỗi 5 giây
+        setTimeout(showSlide, 3000); // Chuyển ảnh sau mỗi 3 giây
       }
 
       showSlide(); // Bắt đầu chạy slideshow
     </script>
     <!-- 2 ô tin tức song song-->
-    <!-- Ô TIN TỨC -->
-    <div class="container_swap">
-      <div class="div_left">
-        <h4>Tin tức nổi bật</h4>
-        <a
+    <div class="container">
+      <div class="box">
+          <h2>Tin tức nổi bật</h2>
+          <a
           href="https://langsontourism.com.vn/vi/detailnews/?t=trien-khai-chuong-trinh-hop-tac-chuyen-doi-so-du-lich-lang-son&id=news_1868"
           target="_blank"
         >
-          <img src="/image/IMG-tintuc/1.jpg" style="width: 150%" />
+          <img src="/image/IMG-tintuc/1.jpg" style="width: 100%" />
         </a>
         <a
           href="https://langsontourism.com.vn/vi/detailnews/?t=cong-vien-dia-chat-lang-son-dong-chay-su-song-noi-mien-dat-thieng&id=news_1854"
           target="_blank"
-          ><img src="/image/IMG-tintuc/2.jpg" style="width: 150%"
+          ><img src="/image/IMG-tintuc/2.jpg" style="width: 100%"
         /></a>
         <a
           href="https://langsontourism.com.vn/vi/detailnews/?t=hoi-nghi-xay-dung-san-pham-du-lich-nong-thon-tren-dia-ban-huyen-dinh-lap&id=news_1845"
           target="_blank"
-          ><img src="/image/IMG-tintuc/3.jpg" style="width: 150%"
+          ><img src="/image/IMG-tintuc/3.jpg" style="width: 100%"
         /></a>
       </div>
-      <!-- Ô Khám phá -->
-      <div class="div_right"></div>
-      <h4>Khám Phá</h4>
-      <a href="Gioithieu.html">
-        <img src="/image/img-khampha/1.jpg" alt=""
-      /></a>
-      <a href="diemden.html"><img src="/image/img-khampha/2.jpg" alt="" /></a>
-      <a href="amthuc.html"><img src="/image/img-khampha/3.jpg" alt="" /></a>
-    </div>
+      <div class="box">
+          <h2>Khám Phá</h2>
+          <a href="Gioithieu.html">
+            <img src="/image/img-khampha/1.jpg" alt="" style="width: 100%;"/></a>
+          <a href="diemden.html"><img src="/image/img-khampha/2.jpg" alt="" style="width: 100%;/></a>
+          <a href="amthuc.html"><img src="/image/img-khampha/3.jpg" alt="" style="width: 100%;" /></a>
+      </div>
+  </div>
   </body>
-  <footer>
-    <p>&copy; 2024 Lạng Sơn Tourism</p>
-  </footer>
+<footer>
+  <p>&copy; 2024 Lạng Sơn Tourism</p>
+</footer>
 </html>
